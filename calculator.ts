@@ -2,7 +2,7 @@
 const operations = ['multiply', 'add', 'divide'] //operaciones de nuestra calculadora
 
 const calculator = (a: number, b: number, op: string) => {
-    if (operations.includes(op)) {
+    if (!operations.includes(op)) {
         console.log('This operation is not defined')
     }
 
@@ -15,3 +15,5 @@ const calculator = (a: number, b: number, op: string) => {
     }
 }
 
+const result = calculator( 5, 2,'add')
+console.log(result)
