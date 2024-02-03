@@ -9,12 +9,14 @@ const calculator = (a: number, b: number, op: Operation): Result => {
     if (op === 'add')      return a + b  //si op es igual a 'add' return suma de a por b
 
     if(op == 'divide') {                    
-        if(a === 0 || b === 0) throw new Error('Can\t divide by 0')
+        if(a === 0 || b === 0) throw new Error('Cant divide by 0')
         return a/b
     }
 
     throw new Error('Operation is not valid')
 }
+
+console.log(process.argv) //todas las posiciones del array
 
 //llamamos la funcion para que muestre el resultado por consola
 console.log(calculator( 5, 2,'add'))
