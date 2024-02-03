@@ -1,11 +1,9 @@
 //ejercicio pqueño de Ts de calculadora
-const operations = ['multiply', 'add', 'divide'] //operaciones de nuestra calculadora
 
-const calculator = (a: number, b: number, op: string) => {
-    if (!operations.includes(op)) {
-        console.log('This operation is not defined')
-    }
+type Operation = 'multiply' | 'add' | 'divide' //operaciones de nuestra calculadora, definidas como typo para que puedan ser usadas en otros archivos
 
+//en los parametros de la funcion colocamos tambien el tipo de operacion
+const calculator = (a: number, b: number, op: Operation) => {  
     if (op == 'multiply') return a * b  //si op es igual a 'multiply' return multiplicacion de a por b
     if (op == 'add')      return a + b  //si op es igual a 'add' return suma de a por b
 
@@ -15,5 +13,8 @@ const calculator = (a: number, b: number, op: string) => {
     }
 }
 
-const result = calculator( 5, 2,'add')
-console.log(result)
+//llamamos la funcion para que muestre el resultado por consola
+console.log(calculator( 5, 2,'add'))
+console.log(calculator( 5, 2,'divide'))
+console.log(calculator( 5, 2,'multiply'))
+
